@@ -1,0 +1,68 @@
+<%
+
+    function convert(option) {
+        if(option == 1) {
+            return "Enabled";
+        } else {
+            return "Disabled";
+        }
+    };
+
+%>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= config.website.siteName %> - Guild Manager</title>
+        <meta property="og:title" content="<%= config.website.siteName %> - Guild Manager" />
+        <link rel="icon" href="/assets/logo.png">
+        <meta property="og:image" content="/assets/logo.png">
+        <meta name="theme-color" content="<%= config.themeColor %>">
+        <meta name="description" content="<%= config.website.siteDescription %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="<%= config.website.siteDescription %>" />
+    </head>
+    <body>
+        <%- include('_header', { config: config }) %>
+        <br>
+        <br>
+        <div class="container text-white bg-third container1">
+            <br>
+            <h1 class="worksans text-center">Manage Guild</h1>
+            <p class="text-center">Edit the below settings for your guild.</p>
+            <form method="post" action="/backend/guild/update/<%= guild.guildid %>">
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="autobans">Toggle Auto-Bans</label>
+                    <select name="autobans" id="autobans" class="form-select bg-dark text-center text-white mx-auto" aria-label="Toggle Auto-Bans">
+                        <option value="<%= guild.autobans %>" selected><%= convert(guild.autobans) %></option>
+                        <option value="1">Enabled</option>
+                        <option value="0">Disabled</option>
+                    </select>
+                </div>
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="autounbans">Toggle Auto-Unbans</label>
+                    <select name="autounbans" class="form-select bg-dark text-center text-white mx-auto" aria-label="Toggle Auto-Unbans">
+                        <option value="<%= guild.autounbans %>" selected><%= convert(guild.autounbans) %></option>
+                        <option value="1">Enabled</option>
+                        <option value="0">Disabled</option>
+                    </select>
+                </div>
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="logging">Logging Channel</label>
+                    <select name="logging" class="form-select bg-dark text-center text-white mx-auto" aria-label="Set Logging Channel">
+                        <option value="<%= selectedChan.id %>" selected><%= selectedChan.name %></option>
+                        <% channels.forEach(function(channel) { %>
+                        <option value="<%= channel.id %>"><%= channel.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" style="width: 60%">Save Changes</button>
+            </form>
+            <br>
+        </div>
+        <br><br><br><br><br>
+        <%- include('_footer', { config: config }) %>
+    </body>
+</html>

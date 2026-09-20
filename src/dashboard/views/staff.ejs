@@ -1,0 +1,81 @@
+<%
+    function convert(boolean) {
+        if(boolean) {
+            return "Active";
+        } else {
+            return "Inactive";
+        };
+    };
+%>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= config.website.siteName %> - Staff</title>
+        <meta property="og:title" content="<%= config.website.siteName %> - Staff" />
+        <link rel="icon" href="/assets/logo.png">
+        <meta property="og:image" content="/assets/logo.png">
+        <meta name="theme-color" content="<%= config.themeColor %>">
+        <meta name="description" content="<%= config.website.siteDescription %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="<%= config.website.siteDescription %>" />
+    </head>
+    <body>
+        <%- include('_header', { config: config }) %>
+        <br>
+        <br>
+        <div class="container text-white text-center bg-third container1">
+            <br>
+            <h1 class="worksans" style="font-weight: 700;">Staff Panel</h1>
+            <p>Scroll down to view different sections of this panel!</p>
+            <form method="post" action="/backend/bans/add">
+                <input type="text" class="banform bg-dark text-white" id="userid" placeholder="User ID" name="userid">
+                <input type="text" class="banform bg-dark text-white" id="reason" placeholder="Reason" name="reason">
+                <input type="text" class="banform bg-dark text-white" id="proof" placeholder="Proof (Image Link)" name="proof">
+                <br>
+                <button type="submit" style="margin-top: 0.5em;" class="btn btn-primary">Enforce Ban</button>
+            </form>
+            <div class="modded-hr">
+                <hr>
+            </div>
+            <div class="customDiv">
+                <h2 class="worksans" style="font-weight: 700;">Actively Banned Users</h2>
+                <p>Below are all of the <span id="Inactive">currently banned</span> users.</p>
+                <table class="table table-bordered border-gray text-white">
+                    <thead>
+                      <tr>
+                        <th scope="col">Ban</th>
+                        <th scope="col">User ID</th>
+                        <th scope="col">Reason</th>
+                        <th scope="col">Proof</th>
+                        <th scope="col">Staff Member</th>
+                        <th scope="col" class="text-end">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% bans.forEach(function(ban) { %>
+                            <tr>
+                                <td id="Inactive">#<%= ban.banid %></td>
+                                <td>
+                                    <code><%= ban.userid %></code>
+                                </td>
+                                <td><%= ban.reason %></td>
+                                <td><a href="<%= ban.proof %>" target="_blank" class="btn btn-primary btn-sm text-center">View</a></td>
+                                <td>
+                                    <code><%= ban.bannedby %></code>
+                                </td>
+                                <td class="text-end">
+                                    <a class="btn btn-outline-danger btn-sm" href="/backend/bans/remove/<%= ban.userid %>">Unban</a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
+        <br><br><br><br><br>
+        <%- include('_footer', { config: config }) %>
+    </body>
+</html>

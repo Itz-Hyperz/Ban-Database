@@ -1,0 +1,346 @@
+html, body {
+    overflow-x: hidden !important;
+}
+
+body {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-color: #060F27;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    word-wrap: break-word !important;
+}
+
+#footer {
+    position: fixed;
+    background-color: #172144;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 1s
+}
+
+a:hover {
+    color: rgb(0, 162, 255);
+}
+
+.exo {
+    font-family: 'Exo', sans-serif !important;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.sourcecodepro {
+    font-family: 'Source Code Pro', monospace !important;
+}
+
+.worksans {
+    font-family: 'Work Sans', sans-serif !important;
+}
+
+.bg-secondary {
+    background-color: #060F27 !important;
+    border-color: #060F27;
+}
+
+.bg-third {
+    background-color: #172144;
+    border-color: #172144;
+    border-radius: 1em;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #172144;
+    border-color: #172144;
+    padding: 1em;
+    font-family: 'Work Sans', sans-serif !important;
+    font-weight: 500;
+    transition: background-color .2s ease-in-out;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #131b38;
+    border-color: #131b38;
+}
+
+.navbar-toggler {
+    color: white;
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-brand {
+    margin-top: 0.3em;
+    color: white;
+    font-family: 'Work Sans', sans-serif !important;
+    font-weight: 700;
+    font-size: 1.4em;
+    background-color: #172144;
+    border-color: #172144;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 1.2em !important;
+    padding-right: 1.2em !important;
+    border-radius: 0.4em;
+}
+
+.nav-link {
+    margin-right: 0;
+    margin-left: 0.4em;
+    margin-top: 0.6em;
+    color: white;
+    background-color: #172144;
+    border-color: #172144;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 1.2em !important;
+    padding-right: 1.2em !important;
+    font-size: 1.4em;
+    font-family: 'Work Sans', sans-serif !important;
+    font-weight: 500;
+    border-radius: 0.4em;
+    transition: background-color .2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: white;
+    background-color: #131b38;
+    border-color: #131b38;
+}
+
+.modded-hr hr {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    color: white;
+}
+
+.aboutText {
+    margin-left: 2em;
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+    font-weight: 500;
+}
+
+.iconhellyeah {
+    font-size: 8em;
+    margin-bottom: 0.2em;
+}
+
+code {
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    font-weight: normal;
+    text-indent: 0;
+    letter-spacing: 0;
+    font-size: 0.9em;
+    /* margin: 0 0.25em; */
+    padding: 0.25em 0.5em;
+    background-color: rgba(144,144,144,0.25);
+    border-radius: 0.25em;
+    color: rgb(243, 243, 243);
+}
+
+pre code {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #ebebeb;
+    font-family: 'Courier Prime', monospace;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #4b4b4b;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.codeforced {
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    font-weight: normal;
+    text-indent: 0;
+    letter-spacing: 0;
+    font-size: 0.9em;
+    /* margin: 0 0.25em; */
+    padding: 0.25em 0.5em;
+    background-color: rgba(144,144,144,0.25);
+    border-radius: 0.25em;
+    color: rgb(243, 243, 243);
+}
+
+#Active {
+    color: #39ff43;
+}
+
+#Inactive {
+    color: #ff3939;
+}
+
+.banlistitem {
+    width: 60%;
+    border-radius: 0.8em; 
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+}
+
+.nobull {
+    list-style-type: none;
+}
+
+.guild-manage {
+    width: 9em;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color:rgb(0, 162, 255) !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+    border-radius: 0.8em !important;
+    color: white;
+    transition: background-color .2s ease-in-out;
+}
+
+.guild-manage:hover, .guild-manage:focus {
+    background-color: rgb(0, 162, 255) !important;
+}
+
+.guild-invite {
+    width: 9em;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-color:rgb(0, 223, 85) !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+    border-radius: 0.8em !important;
+    color: white;
+    transition: background-color .2s ease-in-out;
+}
+
+.guild-invite:hover, .guild-invite:focus {
+    background-color: rgb(0, 223, 85) !important;
+}
+
+.imgguildstyle-invite {
+    background-color: rgb(0, 223, 85) !important;
+    border-color:rgb(0, 223, 85) !important;
+}
+
+.imgguildstyle-manage {
+    background-color: rgb(0, 162, 255) !important;
+    border-color:rgb(0, 162, 255) !important;
+}
+
+.form-select {
+    width: 60%;
+}
+
+table {
+    background-color: rgba(41, 41, 41, 0.3);
+    line-height: 1;
+    width: 100% !important;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.customDiv {
+    width: 100%;
+    max-height: 25em;
+    overflow-y: auto;
+}
+
+.customDiv2 {
+    width: 100%;
+    height: 50em;
+    max-height: 50em;
+    overflow-y: auto;
+}
+
+.banform {
+    width: 20%;
+    padding: 0.2em;
+    border-style: solid;
+    border-color: rgb(0, 132, 255);
+    border-radius: 0.4em;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    /* background: #f1f1f1; */
+    background: rgba(255, 0, 0, 0);
+    /* background-color: transparent; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.075);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(136, 136, 136, 0.445);
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(136, 136, 136, 0.445);
+}
+
+@media only screen and (max-width: 540px) {
+    .navbar-brand {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0 !important;
+    }
+    .navbar-toggler {
+        margin-top: 0.6em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 94%;
+    }
+    .navbar-nav {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        left: 0 !important;
+    }
+    .container1 {
+        width: 95%;
+        text-align: center;
+    }
+    .container1col1 {
+        border-right-style: hidden !important;
+        border-right-width: 0 !important;
+        border-right-color: rgba(0, 0, 0, 0) !important;
+    }
+    .aboutText {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .banlistitem {
+        width: 95%;
+    }
+    .banform {
+        width: 60%;
+    }
+}

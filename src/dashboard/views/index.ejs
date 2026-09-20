@@ -1,0 +1,88 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= config.website.siteName %> - Home</title>
+        <meta property="og:title" content="<%= config.website.siteName %> - Home" />
+        <link rel="icon" href="/assets/logo.png">
+        <meta property="og:image" content="/assets/logo.png">
+        <meta name="theme-color" content="<%= config.themeColor %>">
+        <meta name="description" content="<%= config.website.siteDescription %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="<%= config.website.siteDescription %>" />
+    </head>
+    <body>
+        <%- include('_header', { config: config }) %>
+        <br>
+        <br>
+        <div class="container text-white text-center bg-third container1">
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 container1col1" style="border-right-style: solid; border-right-width: 3px; border-right-color: white;">
+                    <h1 class="worksans themeColor" style="font-weight: 700; font-size: 5em;"><%= config.website.siteName %></h1>
+                </div>
+                <div class="col-lg-6 text-start worksans">
+                    <div class="aboutText">
+                        <%= config.website.siteDescription %>
+                    </div>
+                </div>
+            </div>
+            <div class="modded-hr">
+                <hr>
+            </div>
+            <div>
+                <h2 class="worksans" style="font-weight: 700;">Reports & Appeals</h2>
+                <p>Look below to create a report, submit an appeal, and more!</p>
+                <br>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <a class="hoverA" href="/report">
+                            <div class="iconhellyeah">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <h2 style="font-weight: 700; text-decoration: underline;">Reports</h2>
+                        </a>
+                    </div>
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <a class="hoverA" href="/search">
+                            <div class="iconhellyeah">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <h2 style="font-weight: 700; text-decoration: underline;">Search</h2>
+                        </a>
+                    </div>
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <a class="hoverA" href="/appeal">
+                            <div class="iconhellyeah">
+                                <i class="fa-solid fa-person-praying"></i>
+                            </div>
+                            <h2 style="font-weight: 700; text-decoration: underline;">Appeals</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modded-hr">
+                <hr>
+            </div>
+            <br>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <h3><%= guildcount %></h3>
+                        <h2 style="font-weight: 700;">Servers</h2>
+                    </div>
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <h3><%= bancount %></h3>
+                        <h2 style="font-weight: 700;">Banned Users</h2>
+                    </div>
+                    <div class="col-lg-3" style="margin-bottom: 3em;">
+                        <h3><%= usercount %></h3>
+                        <h2 style="font-weight: 700;">Users</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <%- include('_footer', { config: config }) %>
+    </body>
+</html>

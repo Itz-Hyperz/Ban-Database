@@ -1,0 +1,42 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= config.website.siteName %> - Report</title>
+        <meta property="og:title" content="<%= config.website.siteName %> - Report" />
+        <link rel="icon" href="/assets/logo.png">
+        <meta property="og:image" content="/assets/logo.png">
+        <meta name="theme-color" content="<%= config.themeColor %>">
+        <meta name="description" content="<%= config.website.siteDescription %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="<%= config.website.siteDescription %>" />
+    </head>
+    <body>
+        <%- include('_header', { config: config }) %>
+        <br>
+        <br>
+        <div class="container text-white bg-third container1">
+            <br>
+            <h1 class="worksans text-center">Create A Report</h1>
+            <p class="text-center">Fill out the below information to file a report!</p>
+            <form method="post" action="/backend/create/report">
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="userid">Discord User ID:</label>
+                    <input type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="userid" id="userid" placeholder="Discord User ID..." required>
+                </div>
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="reason">Report Reason:</label>
+                    <textarea type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="reason" id="reason" rows=4 required></textarea>
+                </div>
+                <div class="mb-3" style="margin-bottom: 0.4em;">
+                    <label class="worksans text-left" style="font-weight: 600;" for="proof">Proof (Image Links):</label>
+                    <textarea type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="proof" id="proof" rows=2 required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 60%">Submit Report</button>
+            </form>
+            <br>
+        </div>
+        <br><br><br><br><br>
+        <%- include('_footer', { config: config }) %>
+    </body>
+</html>

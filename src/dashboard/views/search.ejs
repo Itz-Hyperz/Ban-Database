@@ -1,0 +1,86 @@
+<%
+    function convert(boolean) {
+        if(boolean) {
+            return "Active";
+        } else {
+            return "Inactive";
+        };
+    };
+%>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= config.website.siteName %> - Search</title>
+        <meta property="og:title" content="<%= config.website.siteName %> - Search" />
+        <link rel="icon" href="/assets/logo.png">
+        <meta property="og:image" content="/assets/logo.png">
+        <meta name="theme-color" content="<%= config.themeColor %>">
+        <meta name="description" content="<%= config.website.siteDescription %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="<%= config.website.siteDescription %>" />
+    </head>
+    <body>
+        <%- include('_header', { config: config }) %>
+        <br>
+        <br>
+        <div class="container text-white text-center bg-third container1">
+            <br>
+            <h1 class="worksans" style="font-weight: 700;">Search A User</h1>
+            <p>Use the below input to search a user Id in our database!</p>
+            <form method="post" action="/backend/search">
+                <div class="mb-3">
+                    <input type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="userid" id="userid" placeholder="Discord User ID..." required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 60%">Search</button>
+            </form>
+            <% if(response && bans.length > 0) { %>
+                <div class="modded-hr">
+                    <hr>
+                </div>
+                <div class="container text-white text-center bg-third">
+                    <% bans.forEach(function(ban) { %>
+                        <div class="container bg-secondary banlistitem">
+                            <br>
+                            <h2 class="worksans">Ban Id: <code><%= ban.banid %></code> (<span id="<%= convert(ban.active) %>"><%= convert(ban.active) %></span>)</h2>
+                            <p>Below you will find more information on this ban.</p>
+                            <div style="width: 90%; margin-left: auto; margin-right: auto;">
+                                <hr>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="worksans" style="font-size: 1.4em; margin-bottom: 1em;">
+                                        <p style="font-weight: 700; margin-bottom: 0;">Reason</p>
+                                        <code><%= ban.reason %></code>
+                                    </div>
+                                    <div class="worksans" style="font-size: 1.4em; margin-bottom: 1em;">
+                                        <p style="font-weight: 700; margin-bottom: 0;">Proof</p>
+                                        <a href="<%= ban.proof %>" target="_blank" style="color: rgb(0, 162, 255);"><code>View</code></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="worksans" style="font-size: 1.4em; margin-bottom: 1em;">
+                                        <p style="font-weight: 700; margin-bottom: 0;">Staff Member</p>
+                                        <code><%= ban.bannedby %></code>
+                                    </div>
+                                    <div class="worksans" style="font-size: 1.4em; margin-bottom: 1em;">
+                                        <p style="font-weight: 700; margin-bottom: 0;">Date & Time</p>
+                                        <code><%= ban.bannedat %></code>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+                    <% }); %>
+                </div>
+            <% }; %>
+            <br>
+        </div>
+        <br>
+        <br>
+        <br>
+        <%- include('_footer', { config: config }) %>
+    </body>
+</html>
