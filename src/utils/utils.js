@@ -151,6 +151,12 @@ async function addBan(client, con, userid, reason, proof, staffid) {
                 if(err) throw err;
                 insertId = row.insertId;
                 // Push
+                let useProof = false;
+                if(proof.includes('http')) {
+                    if(proof.includes('jpg') || proof.includes('png') || proof.includes('jpeg') || proof.includes('gif') || proof.includes('webp')) {
+                        useProof = true;
+                    };
+                };
                 let embed = new client.discord.MessageEmbed()
                 .setColor(client.config.themeColor)
                 .setTitle("New Ban Alert")
@@ -162,6 +168,7 @@ async function addBan(client, con, userid, reason, proof, staffid) {
                     { name: "Reason", value: `${reason}`, inline: false },
                 )
                 .setFooter({ text: `Ban ID: ${insertId}`, iconURL: client.user.avatarURL({ dynamic: true }) });
+                if(useProof) embed.setImage(proof);
                 let alertEmbed = new client.discord.MessageEmbed()
                 .setColor(client.config.themeColor)
                 .setTitle("You were banned!")
@@ -173,6 +180,7 @@ async function addBan(client, con, userid, reason, proof, staffid) {
                     { name: "Reason", value: `${reason}`, inline: false },
                 )
                 .setFooter({ text: `Ban ID: ${insertId}`, iconURL: client.user.avatarURL({ dynamic: true }) });
+                if(useProof) alertEmbed.setImage(proof);
                 try {
                     await user.send({ embeds: [alertEmbed] }).catch(e => {});
                 } catch(e) {}
