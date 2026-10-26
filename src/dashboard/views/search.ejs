@@ -25,15 +25,15 @@
         <%- include('_header', { config: config }) %>
         <br>
         <br>
-        <div class="container text-white text-center bg-third container1">
+        <div class="container text-white text-center container1">
             <br>
             <h1 class="worksans" style="font-weight: 700;">Search A User</h1>
             <p>Use the below input to search a user Id in our database!</p>
             <form method="post" action="/backend/search">
                 <div class="mb-3">
-                    <input type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="userid" id="userid" placeholder="Discord User ID..." required>
+                    <input type="text" class="form-control text-white bg-dark text-center" style="max-width: 480px; margin-left: auto; margin-right: auto;" name="userid" id="userid" placeholder="Discord User ID..." required>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 60%">Search</button>
+                <button type="submit" class="btn btn-primary" style="max-width: 480px; width: 100%;">Search</button>
             </form>
             <% if(response && bans.length > 0) { %>
                 <div class="modded-hr">

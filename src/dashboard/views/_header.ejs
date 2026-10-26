@@ -4,7 +4,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Montserrat:wght@500&family=Source+Code+Pro:wght@200;300&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Montserrat:wght@500&family=Source+Code+Pro:wght@200;300&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Custom Styling & Scripts -->
 <link rel="stylesheet" href="/assets/main.css">
@@ -24,9 +24,12 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-lg bg-secondary">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand text-white themeColor" href="#"><%= config.website.siteSlogan %></a>
+      <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" alt="TrollGuard" onerror="this.style.display='none'">
+        <%= config.website.siteSlogan || config.website.siteName || 'TrollGuard' %>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

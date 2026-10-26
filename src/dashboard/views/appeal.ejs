@@ -15,16 +15,16 @@
         <%- include('_header', { config: config }) %>
         <br>
         <br>
-        <div class="container text-white bg-third container1">
+        <div class="container text-white container1">
             <br>
             <h1 class="worksans text-center">Submit An Appeal</h1>
             <p class="text-center">Fill out the below information to submit an appeal!</p>
             <form method="post" action="/backend/create/appeal">
                 <div class="mb-3" style="margin-bottom: 0.4em;">
                     <label class="worksans text-left" style="font-weight: 600;" for="userid">Appeal Reason:</label>
-                    <textarea type="text" class="form-control text-white bg-dark text-center" style="width: 60%; margin-left: auto; margin-right: auto;" name="reason" id="reason" rows=4 required></textarea>
+                    <textarea type="text" class="form-control text-white bg-dark text-center" style="max-width: 480px; margin-left: auto; margin-right: auto;" name="reason" id="reason" rows=4 required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 60%">Submit Appeal</button>
+                <button type="submit" class="btn btn-primary" style="max-width: 480px; width: 100%;">Submit Appeal</button>
             </form>
             <br>
         </div>
